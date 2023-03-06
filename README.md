@@ -1,42 +1,8 @@
-npm installnpm# Nuxt 3 Minimal Starter
+#Nuxt 3 Ionic Side Menu Minimal Starter
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) and [Nuxt Ionic Documentation](https://ionic.nuxtjs.org/)to learn more.
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+- ionic side menu - implemented using [split pane](https://ionicframework.com/docs/api/split-pane)
+- login screen
+- private UI only accessible after auth using [nuxt middleware](https://nuxt.com/docs/guide/directory-structure/middleware) and [nuxt composables](https://nuxt.com/docs/guide/directory-structure/composables) to manage auth data
+- already integrated [Ionic Capacitor](https://capacitorjs.com/) for deployment to mobile IOS and Android devices
