@@ -24,7 +24,7 @@
   </ion-page>
 </template>
 <script lang="ts" setup>
-import { actionSheetController } from "@ionic/core";
+import { actionSheetController } from "@ionic/vue";
 import { ActionSheet, ActionSheetButtonStyle } from '@capacitor/action-sheet';
 definePageMeta({
   alias: ["/", "/home"],
