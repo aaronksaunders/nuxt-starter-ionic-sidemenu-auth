@@ -32,6 +32,8 @@ const ionRouter = useIonRouter();
 const result = ref();
 
 const showActions = async () => {
+  console.log("in action sheet controller");
+  try {
   const actionSheet = await actionSheetController.create({
     header: "Example header",
     subHeader: "Example subheader",
@@ -63,5 +65,8 @@ const showActions = async () => {
 
   const res = await actionSheet.onDidDismiss();
   result.value = res;
+} catch (error) {
+  console.log("in action sheet function ", error)
+}
 };
 </script>
