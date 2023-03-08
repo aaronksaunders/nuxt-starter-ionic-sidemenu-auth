@@ -18,7 +18,7 @@
       </ion-button>
 
       <ion-button @click="doShowActions"> Action Sheet JS </ion-button>
-      <ion-button @click="showActionsCap"> Action Sheet Native </ion-button>
+      <!-- <ion-button @click="showActionsCap"> Action Sheet Native </ion-button> -->
       <pre>{{ JSON.stringify(result, null, 2) }}</pre>
     </ion-content>
   </ion-page>
