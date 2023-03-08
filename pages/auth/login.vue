@@ -44,7 +44,7 @@ const onLogin = async () => {
     <ion-header translucent>
       <ion-toolbar>
         <!-- <ion-buttons slot="start"> <ion-back-button /></ion-buttons> -->
-        <ion-title> Nuxt Ionic: Login </ion-title>
+        <ion-title> Nuxt Ionic: Login 1 </ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true" class="ion-padding">

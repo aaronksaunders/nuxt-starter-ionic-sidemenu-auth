@@ -17,13 +17,15 @@
         Next Page
       </ion-button>
 
-      <ion-button @click="showActions"> Action Sheet </ion-button>
-      <pre>{{ JSON.stringify(result,null,2) }}</pre>
+      <ion-button @click="doShowActions"> Action Sheet JS </ion-button>
+      <ion-button @click="showActionsCap"> Action Sheet Native </ion-button>
+      <pre>{{ JSON.stringify(result, null, 2) }}</pre>
     </ion-content>
   </ion-page>
 </template>
 <script lang="ts" setup>
 import { actionSheetController } from "@ionic/core";
+import { ActionSheet, ActionSheetButtonStyle } from '@capacitor/action-sheet';
 definePageMeta({
   alias: ["/", "/home"],
   middleware: ["auth"],
@@ -31,9 +33,38 @@ definePageMeta({
 const ionRouter = useIonRouter();
 const result = ref();
 
+const showActionsCap = async () => {
+  const result = await ActionSheet.showActions({
+    title: 'Photo Options',
+    message: 'Select an option to perform',
+    options: [
+      {
+        title: 'Upload',
+      },
+      {
+        title: 'Share',
+      },
+      {
+        title: 'Remove',
+        style: ActionSheetButtonStyle.Destructive,
+      },
+    ],
+  });
+
+  console.log('Action Sheet result:', result);
+};
+
+const doShowActions = () => {
+  showActions().then(
+    () => {
+
+    },
+    (error) => console.log(error)
+  );
+};
+
 const showActions = async () => {
   console.log("in action sheet controller");
-  try {
   const actionSheet = await actionSheetController.create({
     header: "Example header",
     subHeader: "Example subheader",
@@ -61,12 +92,13 @@ const showActions = async () => {
     ],
   });
 
+  console.log("actionSheet", actionSheet);
+
   await actionSheet.present();
+
+  console.log("actionSheet presented", actionSheet);
 
   const res = await actionSheet.onDidDismiss();
   result.value = res;
-} catch (error) {
-  console.log("in action sheet function ", error)
-}
 };
 </script>
