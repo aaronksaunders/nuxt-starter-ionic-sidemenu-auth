@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   modules: ["@nuxtjs/ionic"],
   ionic: {
     integrations: {
