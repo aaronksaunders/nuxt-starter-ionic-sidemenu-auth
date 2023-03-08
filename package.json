@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi generate",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
     "ionic:build": "npm run build",
     "ionic:serve": "npm run dev"
   },
