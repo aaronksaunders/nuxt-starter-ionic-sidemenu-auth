@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { alertController } from "@ionic/core";
 definePageMeta({
   alias: ["/login"],
 });
@@ -10,7 +10,6 @@ const router = useIonRouter();
 const username = ref<string>("");
 const password = ref<string>("");
 
-
 watch(auth, () => {
   if (auth.value) router.replace("/home");
 });
@@ -19,14 +18,24 @@ watch(auth, () => {
  *
  */
 const onLogin = async () => {
-  try {
+  if (!username?.value || !password?.value) {
+    const alert = await alertController.create({
+      header: "Error Alert",
+      subHeader: "Authentication Error",
+      message: "Missing Or Invalid Credentials",
+      buttons: ["OK"],
+    });
 
-    auth.value = { user : username.value, id : '100'+username.value}
+    await alert.present();
+    return;
+  }
+
+  try {
+    auth.value = { user: username.value, id: "100" + username.value };
 
     return router.push("/home");
   } catch (e) {
     console.log(e);
-
   }
 };
 </script>
