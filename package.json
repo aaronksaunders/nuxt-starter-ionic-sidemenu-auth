@@ -3,7 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "ionic:build": "export set BUILD_MOBILE=true; nuxt generate",
+    "ionic:build": "env BUILD_MOBILE=true npx nuxt generate",
     "ionic:serve": "npm run dev",
     "start": "node .output/server/index.mjs",
     "generate": "nuxt generate"

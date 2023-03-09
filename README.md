@@ -16,7 +16,8 @@ Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) and [Nuxt Ionic Docume
 
 ### Building Mobile App
 - need to have `SSR = false` to generate the output that is needed for capacitor to build app
-- added environment variable that i set in `package.json`, `export set BUILD_MOBILE=true` if build mobile is true then I do two things in the `nuxt.config.ts`
+- the mobile build calls `ionic:build:env BUILD_MOBILE=true npx nuxt generate`
+- added environment variable that I set in `package.json`, `env BUILD_MOBILE=true npx nuxt generate` if build mobile is true then I do two things in the `nuxt.config.ts`.
  - set the SSR to false
  - set the API URL to be where i have hosted the server apis from this application
 ```
