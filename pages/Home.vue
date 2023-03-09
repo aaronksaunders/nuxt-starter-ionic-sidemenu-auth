@@ -22,10 +22,11 @@
       <pre>{{ JSON.stringify(result, null, 2) }}</pre>
     </ion-content>
   </ion-page>
+
 </template>
 <script lang="ts" setup>
 import { actionSheetController } from "@ionic/vue";
-import { ActionSheet, ActionSheetButtonStyle } from '@capacitor/action-sheet';
+import { ActionSheet, ActionSheetButtonStyle } from "@capacitor/action-sheet";
 definePageMeta({
   alias: ["/", "/home"],
   middleware: ["auth"],
@@ -35,30 +36,28 @@ const result = ref();
 
 const showActionsCap = async () => {
   const result = await ActionSheet.showActions({
-    title: 'Photo Options',
-    message: 'Select an option to perform',
+    title: "Photo Options",
+    message: "Select an option to perform",
     options: [
       {
-        title: 'Upload',
+        title: "Upload",
       },
       {
-        title: 'Share',
+        title: "Share",
       },
       {
-        title: 'Remove',
+        title: "Remove",
         style: ActionSheetButtonStyle.Destructive,
       },
     ],
   });
 
-  console.log('Action Sheet result:', result);
+  console.log("Action Sheet result:", result);
 };
 
 const doShowActions = () => {
   showActions().then(
-    () => {
-
-    },
+    () => {},
     (error) => console.log(error)
   );
 };

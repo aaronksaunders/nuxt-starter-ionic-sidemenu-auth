@@ -1,5 +1,5 @@
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   return {
-    api: 'works',
+    api: 'works ' + new Date(),
   };
 });

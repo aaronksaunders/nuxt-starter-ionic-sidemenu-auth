@@ -4,7 +4,7 @@ const config: CapacitorConfig = {
   appId: 'com.aks.ionic.nuxtapp',
   appName: 'IonicNuxtApp',
   webDir: 'dist',
-  bundledWebRuntime: false
+  bundledWebRuntime: false,
 };
 
 export default config;
